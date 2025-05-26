@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/tasks/tasks.module').then(m => m.TasksModule)
   },
   {
+    path: 'items',
+    loadChildren: () => import('./features/items/items.module').then(m => m.ItemsModule)
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }

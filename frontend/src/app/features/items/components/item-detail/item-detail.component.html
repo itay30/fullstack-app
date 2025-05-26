@@ -1,0 +1,28 @@
+<div class="item-detail-container">
+  <button class="back-button" (click)="goBack()">
+    ← Back to Destinations
+  </button>
+
+  <div *ngIf="loading" class="loading">
+    Loading destination details...
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+
+  <div class="item-content" *ngIf="!loading && !error && item">
+    <div class="item-header">
+      <h1>{{ item.title }}</h1>
+    </div>
+
+    <div class="item-image">
+      <img [src]="item.img" [alt]="item.title">
+    </div>
+
+    <div class="item-description">
+      <h2>About this Destination</h2>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+</div> 

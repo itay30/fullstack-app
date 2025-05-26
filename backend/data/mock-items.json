@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "1",
+    "title": "Mountain Trek Adventure",
+    "description": "Experience breathtaking mountain views on this guided trek",
+    "img": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b"
+  },
+  {
+    "_id": "2",
+    "title": "Beach Paradise",
+    "description": "Relax on pristine beaches with crystal clear waters",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+  },
+  {
+    "_id": "65f4a8b1c2d3e4f5a6b7c8d9",
+    "title": "Mountain Adventure",
+    "description": "Explore the majestic peaks and valleys of the Rocky Mountains with our guided hiking tours. Experience breathtaking views and challenging trails suitable for all skill levels.",
+    "img": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "65f4a8b1c2d3e4f5a6b7c8d8",
+    "title": "Beach Paradise",
+    "description": "Experience the crystal clear waters and white sandy beaches of the Caribbean islands. Perfect for snorkeling, diving, and ultimate relaxation.",
+    "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "65f4a8b1c2d3e4f5a6b7c8d7",
+    "title": "Urban Discovery",
+    "description": "Discover the hidden gems and cultural landmarks of New York City's diverse neighborhoods. From food tours to architectural wonders.",
+    "img": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "65f4a8b1c2d3e4f5a6b7c8d6",
+    "title": "Forest Retreat",
+    "description": "Find peace and tranquility in the ancient redwood forests of Northern California. Includes guided meditation sessions and nature walks.",
+    "img": "https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "65f4a8b1c2d3e4f5a6b7c8d5",
+    "title": "Desert Safari",
+    "description": "Embark on an unforgettable journey through the stunning landscapes of the Sahara Desert. Experience traditional Bedouin culture and starlit nights.",
+    "img": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "65f4a8b1c2d3e4f5a6b7c8d4",
+    "title": "Island Hopping",
+    "description": "Visit multiple tropical islands and experience diverse cultures in the South Pacific. Includes local cuisine tastings and cultural performances.",
+    "img": "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "65f4a8b1c2d3e4f5a6b7c8d3",
+    "title": "Cultural Heritage",
+    "description": "Explore ancient temples and historical sites across Southeast Asia's rich cultural landscape. Learn about local traditions and ancient customs.",
+    "img": "https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "65f4a8b1c2d3e4f5a6b7c8d2",
+    "title": "Wildlife Safari",
+    "description": "Witness the incredible wildlife of the African savanna in their natural habitat. Expert guides and photographers accompany all expeditions.",
+    "img": "https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&h=900&q=80"
+  }
+] 

@@ -1,18 +1,36 @@
 # Full-stack Application
 
-A full-stack web application built with Angular 11.1.2 and Node.js 14.21.3.
+A full-stack web application built with Angular 11.1.2 and Node.js 14.21.3, featuring task management and adventure destination browsing.
+
+## Features
+
+- Task Management: Create, read, update, and delete tasks
+- Adventure Destinations: Browse and search through adventure destinations
+- Responsive Design: Modern UI with responsive layout
+- Image Integration: High-quality images from Unsplash
+- Search Functionality: Search through tasks and adventure items
 
 ## Project Structure
 
 ```
 fullstack-app/
-├── frontend/          # Angular application
-└── backend/          # Node.js application
-    ├── app.ts        # Main application file
-    ├── models/       # Data models and DTOs
-    ├── services/     # Business logic
-    ├── controllers/  # Route handlers
-    └── routes/       # API routes
+├── frontend/                # Angular application
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── core/       # Core functionality
+│   │   │   │   └── services/
+│   │   │   │       ├── api.service.ts
+│   │   │   │       ├── item.service.ts
+│   │   │   │       └── task.service.ts
+│   │   │   └── features/   # Feature modules
+└── backend/                # Node.js application
+    ├── controllers/        # Route handlers
+    │   └── item.controller.ts
+    ├── services/          # Business logic
+    │   └── item.service.ts
+    ├── data/             # Mock data
+    │   └── mock-items.json
+    └── routes/           # API routes
 ```
 
 ## Prerequisites
@@ -71,4 +89,20 @@ fullstack-app/
 - `ng serve`: Start the development server
 - `ng build`: Build the application
 - `ng test`: Run unit tests
-- `ng e2e`: Run end-to-end tests 
+- `ng e2e`: Run end-to-end tests
+
+## API Endpoints
+
+### Items
+
+- `GET /api/items`: Get all adventure destinations
+- `GET /api/items/:id`: Get a specific adventure destination
+- `GET /api/items/search/:query`: Search adventure destinations
+
+### Tasks
+
+- `GET /api/tasks`: Get all tasks
+- `GET /api/tasks/:id`: Get a specific task
+- `POST /api/tasks`: Create a new task
+- `PUT /api/tasks/:id`: Update a task
+- `DELETE /api/tasks/:id`: Delete a task 
