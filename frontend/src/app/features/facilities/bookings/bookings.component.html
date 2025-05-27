@@ -1,0 +1,94 @@
+<div class="bookings-container">
+  <div class="bookings-header">
+    <h2>My Bookings</h2>
+    <button class="back-button" (click)="router.navigate(['/facilities'])">
+      ← Back to Facilities
+    </button>
+  </div>
+
+  <div class="loading" *ngIf="loading">
+    Loading your bookings...
+  </div>
+
+  <div class="error-message" *ngIf="error">
+    {{error}}
+  </div>
+
+  <div class="no-bookings" *ngIf="!loading && !error && bookings.length === 0">
+    You don't have any bookings yet. 
+    <a [routerLink]="['/facilities']">Browse our facilities</a> to make a booking.
+  </div>
+
+  <div class="bookings-sections" *ngIf="!loading && !error && bookings.length > 0">
+    <!-- Upcoming Bookings -->
+    <div class="bookings-section">
+      <h3>Upcoming Bookings</h3>
+      <div class="bookings-grid">
+        <div class="booking-card" *ngFor="let booking of bookings; let i = index">
+          <ng-container *ngIf="isUpcoming(booking.startDate)">
+            <div class="booking-header">
+              <h4>{{booking.facilityName}}</h4>
+              <button class="cancel-button" (click)="cancelBooking(i)">Cancel</button>
+            </div>
+            <div class="booking-details">
+              <div class="date-group">
+                <label>Start:</label>
+                <span>{{formatDate(booking.startDate)}}</span>
+              </div>
+              <div class="date-group">
+                <label>End:</label>
+                <span>{{formatDate(booking.endDate)}}</span>
+              </div>
+              <div class="user-group">
+                <label>Booked by:</label>
+                <span>{{booking.user}}</span>
+              </div>
+              <div class="description-group">
+                <label>Description:</label>
+                <p class="booking-description">{{booking.description}}</p>
+              </div>
+            </div>
+            <button class="view-facility" (click)="viewFacility(booking.facilityId)">
+              View Facility
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <!-- Past Bookings -->
+    <div class="bookings-section">
+      <h3>Past Bookings</h3>
+      <div class="bookings-grid">
+        <div class="booking-card past" *ngFor="let booking of bookings">
+          <ng-container *ngIf="isPast(booking.endDate)">
+            <div class="booking-header">
+              <h4>{{booking.facilityName}}</h4>
+            </div>
+            <div class="booking-details">
+              <div class="date-group">
+                <label>Start:</label>
+                <span>{{formatDate(booking.startDate)}}</span>
+              </div>
+              <div class="date-group">
+                <label>End:</label>
+                <span>{{formatDate(booking.endDate)}}</span>
+              </div>
+              <div class="user-group">
+                <label>Booked by:</label>
+                <span>{{booking.user}}</span>
+              </div>
+              <div class="description-group">
+                <label>Description:</label>
+                <p class="booking-description">{{booking.description}}</p>
+              </div>
+            </div>
+            <button class="view-facility" (click)="viewFacility(booking.facilityId)">
+              View Facility
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

@@ -1,108 +1,138 @@
-# Full-stack Application
+# Residential Facility Booking System
 
-A full-stack web application built with Angular 11.1.2 and Node.js 14.21.3, featuring task management and adventure destination browsing.
+A modern full-stack application for managing and booking residential building amenities. Built with Angular frontend and Node.js backend, this system allows residents to easily book and manage their facility reservations.
 
 ## Features
 
-- Task Management: Create, read, update, and delete tasks
-- Adventure Destinations: Browse and search through adventure destinations
-- Responsive Design: Modern UI with responsive layout
-- Image Integration: High-quality images from Unsplash
-- Search Functionality: Search through tasks and adventure items
+### Facility Management
+- Browse available building amenities (Fitness Center, Pool, Co-Working Space, etc.)
+- View detailed facility information including:
+  - Capacity limits
+  - Available features
+  - Location within the building
+  - Real-time availability
+
+### Booking System
+- Easy-to-use booking interface
+- Date and time selection
+- Instant availability checking
+- Booking confirmation system
+- Personal booking management
+  - View upcoming bookings
+  - View booking history
+  - Cancel bookings
+
+### User Features
+- Personal booking dashboard
+- Booking descriptions for event planning
+- User identification for each booking
+- Responsive design for mobile and desktop use
+
+## Technical Stack
+
+### Frontend
+- Angular
+- TypeScript
+- SCSS for styling
+- Responsive design
+- Modern UI components
+
+### Backend
+- Node.js
+- Express
+- TypeScript
+- RESTful API architecture
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- Angular CLI
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone [repository-url]
+cd residential-facility-booking
+```
+
+2. Install backend dependencies:
+```bash
+cd backend
+npm install
+```
+
+3. Install frontend dependencies:
+```bash
+cd frontend
+npm install
+```
+
+### Running the Application
+
+1. Start the backend server:
+```bash
+cd backend
+npm run start
+```
+
+2. Start the frontend application:
+```bash
+cd frontend
+ng serve
+```
+
+3. Access the application at `http://localhost:4200`
+
+## Usage
+
+1. Browse Facilities
+   - View all available facilities
+   - Filter by facility type
+   - Search by facility name
+
+2. Make a Booking
+   - Select desired facility
+   - Choose date and time
+   - Enter booking details
+   - Confirm reservation
+
+3. Manage Bookings
+   - View all your bookings
+   - Check upcoming reservations
+   - Cancel if needed
 
 ## Project Structure
 
 ```
-fullstack-app/
-├── frontend/                # Angular application
+├── frontend/                # Angular frontend application
 │   ├── src/
 │   │   ├── app/
-│   │   │   ├── core/       # Core functionality
-│   │   │   │   └── services/
-│   │   │   │       ├── api.service.ts
-│   │   │   │       ├── item.service.ts
-│   │   │   │       └── task.service.ts
-│   │   │   └── features/   # Feature modules
-└── backend/                # Node.js application
-    ├── controllers/        # Route handlers
-    │   └── item.controller.ts
-    ├── services/          # Business logic
-    │   └── item.service.ts
-    ├── data/             # Mock data
-    │   └── mock-items.json
-    └── routes/           # API routes
+│   │   │   ├── core/       # Core services
+│   │   │   ├── features/   # Feature modules
+│   │   │   └── shared/     # Shared components
+│   │   └── assets/         # Static assets
+│   └── ...
+│
+├── backend/                 # Node.js backend application
+│   ├── src/
+│   │   ├── controllers/    # Request handlers
+│   │   ├── models/        # Data models
+│   │   ├── routes/        # API routes
+│   │   └── services/      # Business logic
+│   └── ...
 ```
 
-## Prerequisites
+## Contributing
 
-- Node.js 14.21.3
-- Angular CLI 11.1.2
-- TypeScript 5.0.4
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Setup Instructions
+## License
 
-### Backend Setup
-
-1. Install Node.js 14.21.3
-2. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-### Frontend Setup
-
-1. Install Angular CLI 11.1.2:
-   ```bash
-   npm install -g @angular/cli@11.1.2
-   ```
-2. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   ng serve
-   ```
-
-## Available Scripts
-
-### Backend
-
-- `npm start`: Start the production server
-- `npm run dev`: Start the development server with hot-reload
-- `npm run build`: Build the TypeScript application
-
-### Frontend
-
-- `ng serve`: Start the development server
-- `ng build`: Build the application
-- `ng test`: Run unit tests
-- `ng e2e`: Run end-to-end tests
-
-## API Endpoints
-
-### Items
-
-- `GET /api/items`: Get all adventure destinations
-- `GET /api/items/:id`: Get a specific adventure destination
-- `GET /api/items/search/:query`: Search adventure destinations
-
-### Tasks
-
-- `GET /api/tasks`: Get all tasks
-- `GET /api/tasks/:id`: Get a specific task
-- `POST /api/tasks`: Create a new task
-- `PUT /api/tasks/:id`: Update a task
-- `DELETE /api/tasks/:id`: Delete a task 
+This project is licensed under the MIT License - see the LICENSE file for details. 

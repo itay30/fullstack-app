@@ -1,0 +1,101 @@
+<div class="facility-detail-container">
+  <div class="loading" *ngIf="loading">Loading facility details...</div>
+
+  <div class="error-message" *ngIf="error">{{error}}</div>
+
+  <div class="success-message" *ngIf="bookingSuccess">
+    Booking successful! Redirecting to facilities list...
+  </div>
+
+  <div class="facility-detail" *ngIf="facility && !loading">
+    <div class="facility-header">
+      <button class="back-button" (click)="router.navigate(['/facilities'])">
+        ← Back to Facilities
+      </button>
+      <h2>{{facility.name}}</h2>
+      <span class="facility-type">{{facility.type}}</span>
+    </div>
+
+    <div class="facility-content">
+      <div class="facility-image">
+        <img [src]="facility.image" [alt]="facility.name">
+      </div>
+
+      <div class="facility-info">
+        <p class="description">{{facility.description}}</p>
+
+        <div class="features">
+          <h3>Features:</h3>
+          <ul>
+            <li *ngFor="let feature of facility.features">{{feature}}</li>
+          </ul>
+        </div>
+
+        <div class="location">
+          <h3>Location:</h3>
+          <p>{{facility.location.address}}</p>
+          <p>{{facility.location.city}}, {{facility.location.state}}</p>
+        </div>
+
+        <div class="capacity">
+          <h3>Capacity:</h3>
+          <p>{{facility.capacity}} people</p>
+        </div>
+
+        <div class="booking-form">
+          <h3>Book this Facility</h3>
+          <div class="form-group">
+            <label for="user">Your Name: *</label>
+            <input 
+              type="text" 
+              id="user" 
+              [(ngModel)]="user"
+              placeholder="Enter your name"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="startDate">Start Date: *</label>
+            <input 
+              type="datetime-local" 
+              id="startDate" 
+              [(ngModel)]="startDate"
+              [min]="today"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="endDate">End Date: *</label>
+            <input 
+              type="datetime-local" 
+              id="endDate" 
+              [(ngModel)]="endDate"
+              [min]="startDate || today"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="description">Booking Description:</label>
+            <textarea 
+              id="description" 
+              [(ngModel)]="description"
+              placeholder="Enter the purpose of your booking (optional)"
+              rows="3"
+            ></textarea>
+          </div>
+
+          <button 
+            class="book-button" 
+            (click)="onBook()"
+            [disabled]="!startDate || !endDate || !user"
+          >
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

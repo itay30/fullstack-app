@@ -1,0 +1,68 @@
+<div class="facilities-container">
+  <div class="facilities-header">
+    <div class="header-content">
+      <h2>Our Facilities</h2>
+      <button class="my-bookings-button" [routerLink]="['bookings']">
+        My Bookings
+      </button>
+    </div>
+    
+    <div class="filters">
+      <div class="search-box">
+        <input 
+          type="text" 
+          [(ngModel)]="searchQuery" 
+          placeholder="Search facilities..."
+          (keyup.enter)="onSearch()"
+        >
+        <button (click)="onSearch()">Search</button>
+      </div>
+
+      <div class="type-filter">
+        <select [(ngModel)]="selectedType" (change)="onTypeSelect(selectedType)">
+          <option value="">All Types</option>
+          <option *ngFor="let type of facilityTypes" [value]="type">
+            {{type}}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="error-message" *ngIf="error">
+    {{error}}
+  </div>
+
+  <div class="loading" *ngIf="loading">
+    Loading facilities...
+  </div>
+
+  <div class="facilities-grid" *ngIf="!loading && !error">
+    <div class="facility-card" *ngFor="let facility of facilities" [routerLink]="['/facilities', facility._id]">
+      <div class="facility-image">
+        <img [src]="facility.image" [alt]="facility.name">
+      </div>
+      <div class="facility-content">
+        <h3>{{facility.name}}</h3>
+        <span class="facility-type">{{facility.type}}</span>
+        <p class="facility-description">{{facility.description}}</p>
+        <!-- <div class="facility-details">
+          <div class="facility-features">
+            <h4>Features:</h4>
+            <ul>
+              <li *ngFor="let feature of facility.features">{{feature}}</li>
+            </ul>
+          </div>
+          <div class="facility-location">
+            <p>{{facility.location.city}}, {{facility.location.state}}</p>
+            <p>Capacity: {{facility.capacity}} people</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="no-results" *ngIf="!loading && !error && facilities.length === 0">
+    No facilities found matching your criteria.
+  </div>
+</div>

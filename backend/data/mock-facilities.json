@@ -1,0 +1,122 @@
+[
+  {
+    "_id": "fac001",
+    "name": "Fitness Center",
+    "type": "Fitness",
+    "description": "Modern fitness center equipped with cardio machines, free weights, and dedicated yoga space.",
+    "features": [
+      "Cardio equipment",
+      "Weight training area",
+      "Yoga mats",
+      "Personal lockers",
+      "Water dispenser"
+    ],
+    "capacity": 25,
+    "location": {
+      "address": "Building A - Ground Floor",
+      "city": "New York",
+      "state": "New York",
+      "coordinates": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      }
+    },
+    "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "fac002",
+    "name": "Rooftop Pool & Lounge",
+    "type": "Recreation",
+    "description": "Luxurious rooftop pool with lounging areas, perfect for relaxation and social gatherings.",
+    "features": [
+      "Heated pool",
+      "Sun loungers",
+      "Cabanas",
+      "BBQ area",
+      "Panoramic city views"
+    ],
+    "capacity": 50,
+    "location": {
+      "address": "Building A - Rooftop",
+      "city": "New York",
+      "state": "New York",
+      "coordinates": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      }
+    },
+    "image": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "fac003",
+    "name": "Co-Working Space",
+    "type": "Work",
+    "description": "Professional co-working space with high-speed internet, meeting rooms, and private workstations.",
+    "features": [
+      "High-speed WiFi",
+      "Private meeting rooms",
+      "Printing facilities",
+      "Coffee station",
+      "Phone booths"
+    ],
+    "capacity": 30,
+    "location": {
+      "address": "Building B - 2nd Floor",
+      "city": "New York",
+      "state": "New York",
+      "coordinates": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      }
+    },
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "fac004",
+    "name": "Community Lounge",
+    "type": "Social",
+    "description": "Spacious community lounge for residents to socialize, featuring entertainment systems and comfortable seating.",
+    "features": [
+      "Large screen TV",
+      "Board games",
+      "Kitchen area",
+      "Comfortable seating",
+      "Event space"
+    ],
+    "capacity": 40,
+    "location": {
+      "address": "Building A - 1st Floor",
+      "city": "New York",
+      "state": "New York",
+      "coordinates": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      }
+    },
+    "image": "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "fac005",
+    "name": "Conference Room",
+    "type": "Business",
+    "description": "Professional conference room equipped with modern presentation technology and comfortable seating.",
+    "features": [
+      "Video conferencing",
+      "Projector",
+      "Whiteboard",
+      "Conference phone",
+      "Catering available"
+    ],
+    "capacity": 15,
+    "location": {
+      "address": "Building B - 3rd Floor",
+      "city": "New York",
+      "state": "New York",
+      "coordinates": {
+        "lat": 40.7128,
+        "lng": -74.0060
+      }
+    },
+    "image": "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1600&h=900&q=80"
+  }
+] 
