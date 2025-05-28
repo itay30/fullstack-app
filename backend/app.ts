@@ -1,7 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
-import itemRoutes from './routes/item.routes';
-import taskRoutes from './routes/task.routes';
 import facilityRoutes from './routes/facility.routes';
 
 const app = express();
@@ -12,8 +10,6 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/items', itemRoutes);
-app.use('/api/tasks', taskRoutes);
 app.use('/api/facilities', facilityRoutes);
 
 // Health check endpoint

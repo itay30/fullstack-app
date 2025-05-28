@@ -1,122 +1,122 @@
 [
   {
-    "_id": "fac001",
-    "name": "Fitness Center",
+    "_id": "1001",
+    "name": "Sunset Fitness Club",
     "type": "Fitness",
-    "description": "Modern fitness center equipped with cardio machines, free weights, and dedicated yoga space.",
+    "description": "A high-end fitness club with top-notch equipment, dedicated spinning zones, and professional trainers.",
     "features": [
-      "Cardio equipment",
-      "Weight training area",
-      "Yoga mats",
-      "Personal lockers",
-      "Water dispenser"
-    ],
-    "capacity": 25,
-    "location": {
-      "address": "Building A - Ground Floor",
-      "city": "New York",
-      "state": "New York",
-      "coordinates": {
-        "lat": 40.7128,
-        "lng": -74.0060
-      }
-    },
-    "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&h=900&q=80"
-  },
-  {
-    "_id": "fac002",
-    "name": "Rooftop Pool & Lounge",
-    "type": "Recreation",
-    "description": "Luxurious rooftop pool with lounging areas, perfect for relaxation and social gatherings.",
-    "features": [
-      "Heated pool",
-      "Sun loungers",
-      "Cabanas",
-      "BBQ area",
-      "Panoramic city views"
+      "Spinning bikes",
+      "Personal training",
+      "Sauna",
+      "Protein bar",
+      "24/7 access"
     ],
     "capacity": 50,
     "location": {
-      "address": "Building A - Rooftop",
-      "city": "New York",
-      "state": "New York",
+      "address": "Main Street, Tower B",
+      "city": "Los Angeles",
+      "state": "California",
       "coordinates": {
-        "lat": 40.7128,
-        "lng": -74.0060
+        "lat": 34.0522,
+        "lng": -118.2437
       }
     },
-    "image": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1600&h=900&q=80"
+    "image": "https://images.unsplash.com/photo-1569770216316-7b64b04a539c?auto=format&fit=crop&w=1600&h=900&q=80"
   },
   {
-    "_id": "fac003",
-    "name": "Co-Working Space",
-    "type": "Work",
-    "description": "Professional co-working space with high-speed internet, meeting rooms, and private workstations.",
+    "_id": "1002",
+    "name": "Zen Wellness Center",
+    "type": "Spa & Wellness",
+    "description": "A tranquil space dedicated to relaxation and wellness, featuring massage therapy, meditation, and herbal treatments.",
     "features": [
-      "High-speed WiFi",
-      "Private meeting rooms",
-      "Printing facilities",
-      "Coffee station",
-      "Phone booths"
+      "Massage therapy",
+      "Meditation rooms",
+      "Aromatherapy",
+      "Organic teas",
+      "Yoga classes"
     ],
     "capacity": 30,
     "location": {
-      "address": "Building B - 2nd Floor",
-      "city": "New York",
-      "state": "New York",
+      "address": "Downtown Plaza, 5th Floor",
+      "city": "San Francisco",
+      "state": "California",
       "coordinates": {
-        "lat": 40.7128,
-        "lng": -74.0060
+        "lat": 37.7749,
+        "lng": -122.4194
       }
     },
-    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&h=900&q=80"
+    "image": "https://images.unsplash.com/photo-1580129917555-cfe689c17396?auto=format&fit=crop&w=1600&h=900&q=80"
   },
   {
-    "_id": "fac004",
-    "name": "Community Lounge",
-    "type": "Social",
-    "description": "Spacious community lounge for residents to socialize, featuring entertainment systems and comfortable seating.",
+    "_id": "1003",
+    "name": "The Green Escape Park",
+    "type": "Park",
+    "description": "A lush park with scenic trails, picnic areas, and a serene lake perfect for weekend relaxation.",
     "features": [
-      "Large screen TV",
-      "Board games",
-      "Kitchen area",
-      "Comfortable seating",
-      "Event space"
+      "Walking trails",
+      "Lake with paddle boats",
+      "Outdoor gym",
+      "Picnic tables",
+      "Dog-friendly areas"
     ],
-    "capacity": 40,
+    "capacity": 200,
     "location": {
-      "address": "Building A - 1st Floor",
-      "city": "New York",
-      "state": "New York",
+      "address": "Nature Avenue",
+      "city": "Seattle",
+      "state": "Washington",
       "coordinates": {
-        "lat": 40.7128,
-        "lng": -74.0060
+        "lat": 47.6062,
+        "lng": -122.3321
       }
     },
-    "image": "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1600&h=900&q=80"
+    "image": "https://images.unsplash.com/photo-1603575448762-b9b70a23eacf?auto=format&fit=crop&w=1600&h=900&q=80"
   },
   {
-    "_id": "fac005",
-    "name": "Conference Room",
-    "type": "Business",
-    "description": "Professional conference room equipped with modern presentation technology and comfortable seating.",
+    "_id": "1004",
+    "name": "Downtown Community Library",
+    "type": "Library",
+    "description": "A modern library offering extensive book collections, research resources, and quiet study areas.",
     "features": [
-      "Video conferencing",
-      "Projector",
-      "Whiteboard",
-      "Conference phone",
-      "Catering available"
+      "Digital archives",
+      "Study rooms",
+      "Free Wi-Fi",
+      "Reading lounges",
+      "Events & workshops"
     ],
-    "capacity": 15,
+    "capacity": 100,
     "location": {
-      "address": "Building B - 3rd Floor",
-      "city": "New York",
-      "state": "New York",
+      "address": "Broadway Street",
+      "city": "Chicago",
+      "state": "Illinois",
       "coordinates": {
-        "lat": 40.7128,
-        "lng": -74.0060
+        "lat": 41.8781,
+        "lng": -87.6298
       }
     },
-    "image": "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1600&h=900&q=80"
+    "image": "https://images.unsplash.com/photo-1509023464722-18bbdda5362c?auto=format&fit=crop&w=1600&h=900&q=80"
+  },
+  {
+    "_id": "1005",
+    "name": "Skyline Rooftop Lounge",
+    "type": "Restaurant",
+    "description": "An upscale rooftop lounge offering breathtaking city views, gourmet dining, and signature cocktails.",
+    "features": [
+      "City skyline views",
+      "Live music",
+      "Premium cocktails",
+      "Chef-inspired menu",
+      "Private seating areas"
+    ],
+    "capacity": 75,
+    "location": {
+      "address": "High Rise, Penthouse Level",
+      "city": "Miami",
+      "state": "Florida",
+      "coordinates": {
+        "lat": 25.7617,
+        "lng": -80.1918
+      }
+    },
+    "image": "https://images.unsplash.com/photo-1567440273491-3284c24208cd?auto=format&fit=crop&w=1600&h=900&q=80"
   }
-] 
+]
