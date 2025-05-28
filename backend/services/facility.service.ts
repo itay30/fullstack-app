@@ -19,6 +19,11 @@ class FacilityService {
     }
   }
 
+  addFacility(facility: Facility): Facility[] {
+    this.facilities.push(facility)
+    return this.facilities;
+  }
+
   async getAllFacilities(): Promise<Facility[]> {
     return this.facilities;
   }

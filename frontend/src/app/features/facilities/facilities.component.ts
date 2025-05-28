@@ -8,9 +8,7 @@ import { FacilityService, Facility } from '../../core/services/facility.service'
 })
 export class FacilitiesComponent implements OnInit {
   facilities: Facility[] = [];
-  selectedType: string = '';
   searchQuery: string = '';
-  facilityTypes: string[] = [];
   loading: boolean = true;
   error: string = '';
 
@@ -25,7 +23,6 @@ export class FacilitiesComponent implements OnInit {
     this.facilityService.getAllFacilities().subscribe({
       next: (facilities) => {
         this.facilities = facilities;
-        this.extractUniqueTypes();
         this.loading = false;
       },
       error: (error) => {
@@ -34,12 +31,6 @@ export class FacilitiesComponent implements OnInit {
         this.loading = false;
       }
     });
-  }
-
-  private extractUniqueTypes(): void {
-    this.facilityTypes = Array.from(
-      new Set(this.facilities.map(facility => facility.type))
-    ).sort();
   }
 
   onSearch(): void {
