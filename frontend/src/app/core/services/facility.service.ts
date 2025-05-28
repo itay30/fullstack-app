@@ -54,18 +54,15 @@ export class FacilityService {
       map(facility => {
         // Get bookings from localStorage
         const allBookings: Booking[] = JSON.parse(localStorage.getItem('bookings') || '[]');
-        console.log('All bookings from localStorage:', allBookings); // Debug log
         
         // Filter bookings for this facility
         const facilityBookings = allBookings.filter(booking => booking.facilityId === id);
-        console.log('Filtered bookings for facility:', facilityBookings); // Debug log
         
         // Add bookings to facility
         const facilityWithBookings = {
           ...facility,
           bookings: facilityBookings
         };
-        console.log('Facility with bookings:', facilityWithBookings); // Debug log
         
         return facilityWithBookings;
       })

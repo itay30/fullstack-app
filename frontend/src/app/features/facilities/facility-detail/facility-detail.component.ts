@@ -93,12 +93,12 @@ export class FacilityDetailComponent implements OnInit {
   }
 
   private isTimeSlotAvailable(newBooking: Booking): boolean {
+    const thisFacilityBookings: Booking[] = this.facility?.bookings || [];
     const existingBookings: Booking[] = JSON.parse(localStorage.getItem('bookings') || '[]');
     const newStart = new Date(newBooking.startDate);
     const newEnd = new Date(newBooking.endDate);
 
-    return !existingBookings.some(booking => {
-      if (booking.facilityId === newBooking.facilityId) {
+    return !thisFacilityBookings.some(booking => {
         const existingStart = new Date(booking.startDate);
         const existingEnd = new Date(booking.endDate);
         
@@ -107,8 +107,6 @@ export class FacilityDetailComponent implements OnInit {
           (newEnd >= existingStart && newEnd <= existingEnd) ||
           (newStart <= existingStart && newEnd >= existingEnd)
         );
-      }
-      return false;
     });
   }
 
