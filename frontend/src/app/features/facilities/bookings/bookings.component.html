@@ -1,7 +1,7 @@
 <div class="bookings-container">
   <div class="bookings-header">
     <h2>My Bookings</h2>
-    <button class="back-button" (click)="router.navigate(['/facilities'])">
+    <button class="back-button" (click)="goToFacilities()">
       ← Back to Facilities
     </button>
   </div>
@@ -20,12 +20,18 @@
   </div>
 
   <div class="bookings-sections" *ngIf="!loading && !error && bookings.length > 0">
+    <!-- Debug info -->
+    <div class="debug-info" style="margin-bottom: 20px; padding: 10px; background: #f5f5f5;">
+      <p>Total bookings: {{bookings.length}}</p>
+      <p>Current time: {{formatDate(today)}}</p>
+    </div>
+
     <!-- Upcoming Bookings -->
     <div class="bookings-section">
       <h3>Upcoming Bookings</h3>
       <div class="bookings-grid">
-        <div class="booking-card" *ngFor="let booking of bookings; let i = index">
-          <ng-container *ngIf="isUpcoming(booking.startDate)">
+        <ng-container *ngFor="let booking of bookings; let i = index">
+          <div class="booking-card" *ngIf="isUpcoming(booking.startDate)">
             <div class="booking-header">
               <h4>{{booking.facilityName}}</h4>
               <button class="cancel-button" (click)="cancelBooking(i)">Cancel</button>
@@ -43,7 +49,7 @@
                 <label>Booked by:</label>
                 <span>{{booking.user}}</span>
               </div>
-              <div class="description-group">
+              <div class="description-group" *ngIf="booking.description">
                 <label>Description:</label>
                 <p class="booking-description">{{booking.description}}</p>
               </div>
@@ -51,7 +57,12 @@
             <button class="view-facility" (click)="viewFacility(booking.facilityId)">
               View Facility
             </button>
-          </ng-container>
+          </div>
+        </ng-container>
+        
+        <!-- Show when no upcoming bookings -->
+        <div class="no-bookings-message" *ngIf="getUpcomingBookings().length === 0">
+          No upcoming bookings
         </div>
       </div>
     </div>
@@ -60,8 +71,8 @@
     <div class="bookings-section">
       <h3>Past Bookings</h3>
       <div class="bookings-grid">
-        <div class="booking-card past" *ngFor="let booking of bookings">
-          <ng-container *ngIf="isPast(booking.endDate)">
+        <ng-container *ngFor="let booking of bookings">
+          <div class="booking-card past" *ngIf="isPast(booking.endDate)">
             <div class="booking-header">
               <h4>{{booking.facilityName}}</h4>
             </div>
@@ -78,7 +89,7 @@
                 <label>Booked by:</label>
                 <span>{{booking.user}}</span>
               </div>
-              <div class="description-group">
+              <div class="description-group" *ngIf="booking.description">
                 <label>Description:</label>
                 <p class="booking-description">{{booking.description}}</p>
               </div>
@@ -86,7 +97,12 @@
             <button class="view-facility" (click)="viewFacility(booking.facilityId)">
               View Facility
             </button>
-          </ng-container>
+          </div>
+        </ng-container>
+        
+        <!-- Show when no past bookings -->
+        <div class="no-bookings-message" *ngIf="getPastBookings().length === 0">
+          No past bookings
         </div>
       </div>
     </div>

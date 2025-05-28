@@ -42,6 +42,24 @@
           <p>{{facility.capacity}} people</p>
         </div>
 
+        <div class="facility-bookings" *ngIf="facility.bookings && facility.bookings.length > 0">
+          <h3>Current Bookings:</h3>
+          <div class="bookings-list">
+            <div class="booking-item" *ngFor="let booking of facility.bookings">
+              <div class="booking-dates">
+                <span>From: {{formatDate(booking.startDate)}}</span>
+                <span>To: {{formatDate(booking.endDate)}}</span>
+              </div>
+              <div class="booking-user">
+                <span>Booked by: {{booking.user}}</span>
+              </div>
+              <div class="booking-description" *ngIf="booking.description">
+                <p>{{booking.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="booking-form">
           <h3>Book this Facility</h3>
           <div class="form-group">

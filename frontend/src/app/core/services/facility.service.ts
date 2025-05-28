@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export interface Coordinates {
   lat: number;
@@ -14,6 +15,15 @@ export interface Location {
   coordinates: Coordinates;
 }
 
+interface Booking {
+  facilityId: string;
+  facilityName: string;
+  startDate: string;
+  endDate: string;
+  user: string;
+  description: string;
+}
+
 export interface Facility {
   _id: string;
   name: string;
@@ -23,6 +33,8 @@ export interface Facility {
   capacity: number;
   location: Location;
   image: string;
+
+  bookings: Booking[];
 }
 
 @Injectable({
@@ -38,11 +50,26 @@ export class FacilityService {
   }
 
   getFacilityById(id: string): Observable<Facility> {
-    return this.http.get<Facility>(`${this.apiUrl}/${id}`);
-  }
-
-  getFacilitiesByType(type: string): Observable<Facility[]> {
-    return this.http.get<Facility[]>(`${this.apiUrl}/type/${type}`);
+    return this.http.get<Facility>(`${this.apiUrl}/${id}`).pipe(
+      map(facility => {
+        // Get bookings from localStorage
+        const allBookings: Booking[] = JSON.parse(localStorage.getItem('bookings') || '[]');
+        console.log('All bookings from localStorage:', allBookings); // Debug log
+        
+        // Filter bookings for this facility
+        const facilityBookings = allBookings.filter(booking => booking.facilityId === id);
+        console.log('Filtered bookings for facility:', facilityBookings); // Debug log
+        
+        // Add bookings to facility
+        const facilityWithBookings = {
+          ...facility,
+          bookings: facilityBookings
+        };
+        console.log('Facility with bookings:', facilityWithBookings); // Debug log
+        
+        return facilityWithBookings;
+      })
+    );
   }
 
   searchFacilities(query: string): Observable<Facility[]> {

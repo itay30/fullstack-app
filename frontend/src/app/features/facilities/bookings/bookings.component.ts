@@ -20,7 +20,11 @@ export class BookingsComponent implements OnInit {
   loading: boolean = true;
   error: string = '';
 
-  constructor(private router: Router) {}
+  get today(): string {
+    return new Date().toISOString();
+  }
+
+  constructor(public router: Router) {}
 
   ngOnInit(): void {
     this.loadBookings();
@@ -31,13 +35,24 @@ export class BookingsComponent implements OnInit {
       this.loading = true;
       const bookings = localStorage.getItem('bookings');
       this.bookings = bookings ? JSON.parse(bookings) : [];
-      this.bookings.sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime());
+      
+      // Sort bookings by start date
+      this.bookings.sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime());      
+      
       this.loading = false;
     } catch (error) {
       console.error('Error loading bookings:', error);
       this.error = 'Failed to load bookings.';
       this.loading = false;
     }
+  }
+
+  getUpcomingBookings(): Booking[] {
+    return this.bookings.filter(booking => this.isUpcoming(booking.startDate));
+  }
+
+  getPastBookings(): Booking[] {
+    return this.bookings.filter(booking => this.isPast(booking.endDate));
   }
 
   cancelBooking(index: number): void {
@@ -65,5 +80,9 @@ export class BookingsComponent implements OnInit {
 
   viewFacility(facilityId: string): void {
     this.router.navigate(['/facilities', facilityId]);
+  }
+
+  goToFacilities(): void {
+    this.router.navigate(['/facilities']);
   }
 } 

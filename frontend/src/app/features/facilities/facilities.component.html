@@ -17,15 +17,6 @@
         >
         <button (click)="onSearch()">Search</button>
       </div>
-
-      <div class="type-filter">
-        <select [(ngModel)]="selectedType" (change)="onTypeSelect(selectedType)">
-          <option value="">All Types</option>
-          <option *ngFor="let type of facilityTypes" [value]="type">
-            {{type}}
-          </option>
-        </select>
-      </div>
     </div>
   </div>
 

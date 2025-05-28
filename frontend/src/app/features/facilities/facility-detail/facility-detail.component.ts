@@ -26,9 +26,13 @@ export class FacilityDetailComponent implements OnInit {
   loading: boolean = true;
   bookingSuccess: boolean = false;
 
+  get today(): string {
+    return new Date().toISOString().split('T')[0];
+  }
+
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
+    public router: Router,
     private facilityService: FacilityService
   ) {}
 
@@ -39,6 +43,10 @@ export class FacilityDetailComponent implements OnInit {
     } else {
       this.router.navigate(['/facilities']);
     }
+  }
+
+  formatDate(dateString: string): string {
+    return new Date(dateString).toLocaleString();
   }
 
   private loadFacility(id: string): void {
@@ -73,6 +81,7 @@ export class FacilityDetailComponent implements OnInit {
 
     if (this.isTimeSlotAvailable(newBooking)) {
       this.saveBooking(newBooking);
+      this.loadFacility(this.facility._id);
       this.bookingSuccess = true;
       this.error = '';
       setTimeout(() => {

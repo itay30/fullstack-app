@@ -28,16 +28,6 @@ class FacilityController {
     }
   }
 
-  async getFacilitiesByType(req: Request, res: Response) {
-    try {
-      const { type } = req.params;
-      const facilities = await facilityService.getFacilitiesByType(type);
-      res.json(facilities);
-    } catch (error) {
-      console.error('Error in getFacilitiesByType:', error);
-      res.status(500).json({ message: 'Error fetching facilities by type' });
-    }
-  }
 
   async searchFacilities(req: Request, res: Response) {
     try {

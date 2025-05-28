@@ -19,4 +19,15 @@ export interface Facility {
   capacity: number;
   location: Location;
   image: string;
+
+  bookings: Booking[];
 } 
+
+interface Booking {
+  facilityId: string;
+  facilityName: string;
+  startDate: string;
+  endDate: string;
+  user: string;
+  description: string;
+}

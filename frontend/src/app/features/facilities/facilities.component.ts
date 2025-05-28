@@ -42,26 +42,6 @@ export class FacilitiesComponent implements OnInit {
     ).sort();
   }
 
-  onTypeSelect(type: string): void {
-    this.selectedType = type;
-    if (type) {
-      this.loading = true;
-      this.facilityService.getFacilitiesByType(type).subscribe({
-        next: (facilities) => {
-          this.facilities = facilities;
-          this.loading = false;
-        },
-        error: (error) => {
-          console.error('Error loading facilities by type:', error);
-          this.error = 'Failed to load facilities. Please try again later.';
-          this.loading = false;
-        }
-      });
-    } else {
-      this.loadFacilities();
-    }
-  }
-
   onSearch(): void {
     if (this.searchQuery.trim()) {
       this.loading = true;
